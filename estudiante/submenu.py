@@ -1,10 +1,11 @@
-from estudiante.metodos import agregar_estudiante,listar_estudiantes, eliminar_estudiante
+from estudiante.metodos import agregar_estudiante, listar_estudiantes, eliminar_estudiante
+
 class SubmenuE:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Estudiantes             ")
+            print("           Submenú de Estudiantes            ")
             print("1. Agregar Estudiantes")
             print("2. Listar Estudiantes")
             print("3. Eliminar Estudiantes")

@@ -1,13 +1,14 @@
 from matricula.metodos import agregar_matricula, listar_matriculas, eliminar_matricula
+
 class SubmenuM:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Matriculas             ")
-            print("1. Agregar Matriculas")
+            print("           Submenú de Matrículas             ")
+            print("1. Agregar Matrícula")
             print("2. Listar Matriculados")
-            print("3. Eliminar Matriculados")
+            print("3. Eliminar Matrícula")
             print("4. Volver al Menú Principal")
             print("=============================================")
 

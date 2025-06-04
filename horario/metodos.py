@@ -23,15 +23,19 @@ def generar_horario():
 
             for asignatura in asignaturas:
                 try:
-                    duracion = int(asignatura.duracion)  # Conversión segura a entero
+                    duracion = int(asignatura.duracion)
                     hora_fin = hora_inicio + duracion
-                    dia = input(f"Ingrese el día para {asignatura.nombre_asig}: ")
+                    dia = input(f"Ingrese el día para {asignatura.nombre_asig} (ej: lunes, martes...): ").capitalize()
+
+                    if dia.lower() not in ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sabado']:
+                        print("Día no válido. Se omite la asignatura.")
+                        continue
 
                     horario = Horario(asignatura, dia, hora_inicio, hora_fin)
                     lista_horarios.append(horario)
 
                     print(f"Horario generado: {asignatura.nombre_asig} | {dia} de {hora_inicio}h a {hora_fin}h")
-                    hora_inicio = hora_fin  # Avanzar para próxima asignatura
+                    hora_inicio = hora_fin
                 except ValueError:
                     print("Duración no válida. Se omite la asignatura.")
         else:
@@ -47,7 +51,7 @@ def ver_horario():
 
     for i, horario in enumerate(lista_horarios, start=1):
         asig = horario.asignatura
-        print(f"{i}. Asignatura: {asig.nombre_asig} | Día: {horario.dia} | Horario: {horario.hora_inicio}h - {horario.hora_fin}h")
+        print(f"{i}. Asignatura: {asig.nombre_asig} | Día: {horario.dia} | Hora: {horario.hora_inicio}h - {horario.hora_fin}h")
 
 def eliminar_horario():
     print("\n--- Eliminar Horario ---")

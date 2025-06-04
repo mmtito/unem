@@ -1,10 +1,11 @@
-from horario.metodos import generar_horario, eliminar_horario, ver_horario 
-class SubmenuH:    
+from horario.metodos import generar_horario, eliminar_horario, ver_horario
+
+class SubmenuH:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Matriculas             ")
+            print("             Submenú de Horarios             ")
             print("1. Generar Horario")
             print("2. Ver Horario")
             print("3. Eliminar Horario")

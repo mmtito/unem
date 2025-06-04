@@ -1,10 +1,11 @@
 from docente.metodos import agregar_docente, eliminar_docente, listar_docentes
+
 class SubmenuD:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Docentes            ")
+            print("              Submenú de Docentes            ")
             print("1. Agregar Docentes")
             print("2. Listar Docentes")
             print("3. Eliminar Docentes")

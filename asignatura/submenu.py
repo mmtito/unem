@@ -1,4 +1,5 @@
 from asignatura.metodos import agregar_asignatura, eliminar_asignatura, listar_asignaturas
+
 class SubmenuA:
     @staticmethod
     def submenu():
@@ -6,7 +7,7 @@ class SubmenuA:
             print("\n=============================================")
             print("          Submenú de Asignaturas            ")
             print("1. Agregar Asignaturas y Asignar a un Docente")
-            print("2. Listar Asignatura Con Sus Respectivos Docentes")
+            print("2. Listar Asignaturas con sus respectivos Docentes")
             print("3. Eliminar Asignaturas")
             print("4. Volver al Menú Principal")
             print("=============================================")

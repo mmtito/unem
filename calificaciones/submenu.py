@@ -1,13 +1,14 @@
 from calificaciones.metodos import agregar_calificacion, listar_calificaciones, eliminar_calificacion
+
 class SubmenuC:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Calificacions             ")
-            print("1. Agregar Calificacions")
-            print("2. Listar Calificaciondos")
-            print("3. Eliminar Calificaciondos")
+            print("          Submenú de Calificaciones          ")
+            print("1. Agregar Calificaciones")
+            print("2. Listar Calificaciones")
+            print("3. Eliminar Calificaciones")
             print("4. Volver al Menú Principal")
             print("=============================================")
 

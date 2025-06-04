@@ -6,17 +6,17 @@ from calificaciones.submenu import SubmenuC
 from horario.submenu import SubmenuH
 from generarReporte.submenu import SubmenuR
 
-
 def menu():
     print("\n=============================================")
     print("          Sistema de Gestión Académica       ")
+    print("=============================================")
     print("1. Estudiantes")
     print("2. Docentes")
     print("3. Asignaturas")
     print("4. Matrícula")
-    print("5. Calificación")
-    print("6. Horario")
-    print("7. reporte")   
+    print("5. Calificaciones")
+    print("6. Horarios")
+    print("7. Reportes")
     print("8. Salir")
     print("=============================================")
 
@@ -39,7 +39,7 @@ while True:
     elif opcion == "7":
         SubmenuR.submenu()
     elif opcion == "8":
-        print("Has salido con éxito...")
+        print(" Has salido con éxito del sistema. ¡Hasta pronto!")
         break
     else:
-        print("Dijito no existe en la lista.")
+        print(" Opción no válida. Intenta nuevamente.")

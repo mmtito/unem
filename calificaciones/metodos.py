@@ -26,6 +26,9 @@ def agregar_calificacion():
                 print(f"\nAsignatura: {asig.nombre_asig} (Docente: {asig.docente.nombre} {asig.docente.apellido})")
                 try:
                     nota = float(input("Ingresa la nota: "))
+                    if nota < 0 or nota > 10:
+                        print("La nota debe estar entre 0 y 10. Se omite esta asignatura.")
+                        continue
                     calificacion = Calificacion(estudiante, asig, nota)
                     lista_calificaciones.append(calificacion)
                     print("Calificación registrada con éxito.")
@@ -42,11 +45,14 @@ def listar_calificaciones():
         print("No hay calificaciones registradas.")
     else:
         for i, cal in enumerate(lista_calificaciones, 1):
-            print(f"{i}. Estudiante: {cal.estudiante.nombre} {cal.estudiante.apellido} | Asignatura: {cal.asignatura.nombre_asig} | Nota: {cal.nota}")
+            print(f"{i}. Estudiante: {cal.estudiante.nombre} {cal.estudiante.apellido} | "
+                  f"Asignatura: {cal.asignatura.nombre_asig} | Nota: {cal.nota}")
 
 def eliminar_calificacion():
     print("\n--- Eliminar Calificación ---")
     listar_calificaciones()
+    if not lista_calificaciones:
+        return
     try:
         idx = int(input("Selecciona el número de la calificación a eliminar: ")) - 1
         if 0 <= idx < len(lista_calificaciones):
