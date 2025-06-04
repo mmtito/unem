@@ -1,5 +1,10 @@
 from estudiante.submenu import SubmenuE
 from docente.submenu import SubmenuD
+from asignatura.submenu import SubmenuA
+from matricula.submenu import SubmenuM
+from calificaciones.submenu import SubmenuC
+from horario.submenu import SubmenuH
+from generarReporte.submenu import SubmenuR
 
 
 def menu():
@@ -11,7 +16,8 @@ def menu():
     print("4. Matrícula")
     print("5. Calificación")
     print("6. Horario")
-    print("7. Salir")
+    print("7. reporte")   
+    print("8. Salir")
     print("=============================================")
 
 while True:
@@ -23,15 +29,17 @@ while True:
     elif opcion == "2":
         SubmenuD.submenu()
     elif opcion == "3":
-        print("Estás en la opción: Asignaturas")
+        SubmenuA.submenu()
     elif opcion == "4":
-        print("Estás en la opción: Matrícula")
+        SubmenuM.submenu()
     elif opcion == "5":
-        print("Estás en la opción: Calificación")
+        SubmenuC.submenu()
     elif opcion == "6":
-        print("Estás en la opción: Horario")
+        SubmenuH.submenu()
     elif opcion == "7":
+        SubmenuR.submenu()
+    elif opcion == "8":
         print("Has salido con éxito...")
         break
     else:
-        print("El dígito no existe en la lista, intenta nuevamente.")
+        print("Dijito no existe en la lista.")

@@ -21,10 +21,10 @@ class Asignatura :
         self.docente = docente # relacion con docente
         
 class Matricula :
-    def __init__(self ,estudiante, asignaturas, dia_matriculacion):
+    def __init__(self ,estudiante, asignaturas, fecha):
         self.estudiante =estudiante # relacion con estudiante
         self.asignaturas = asignaturas # relacion con asignatura
-        self.dia_matriculacion = dia_matriculacion
+        self.fecha = fecha
         
 class Calificacion:
     def __init__(self,  estudiante, asignatura, nota):

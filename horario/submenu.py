@@ -1,24 +1,24 @@
-from asignatura.metodos import agregar_asignatura, eliminar_asignatura, listar_asignaturas
-class SubmenuA:
+from horario.metodos import generar_horario, eliminar_horario, ver_horario 
+class SubmenuH:    
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Asignaturas            ")
-            print("1. Agregar Asignaturas y Asignar a un Docente")
-            print("2. Listar Asignatura Con Sus Respectivos Docentes")
-            print("3. Eliminar Asignaturas")
+            print("          Submenú de Matriculas             ")
+            print("1. Generar Horario")
+            print("2. Ver Horario")
+            print("3. Eliminar Horario")
             print("4. Volver al Menú Principal")
             print("=============================================")
 
             opcion = input("¿Qué necesitas hacer?: ")
 
             if opcion == "1":
-                agregar_asignatura()
+                generar_horario()
             elif opcion == "2":
-                listar_asignaturas()
+                ver_horario()
             elif opcion == "3":
-                eliminar_asignatura()
+                eliminar_horario()
             elif opcion == "4":
                 print("Volviendo al menú principal...\n")
                 break

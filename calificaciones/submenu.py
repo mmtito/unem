@@ -1,24 +1,24 @@
-from asignatura.metodos import agregar_asignatura, eliminar_asignatura, listar_asignaturas
-class SubmenuA:
+from calificaciones.metodos import agregar_calificacion, listar_calificaciones, eliminar_calificacion
+class SubmenuC:
     @staticmethod
     def submenu():
         while True:
             print("\n=============================================")
-            print("          Submenú de Asignaturas            ")
-            print("1. Agregar Asignaturas y Asignar a un Docente")
-            print("2. Listar Asignatura Con Sus Respectivos Docentes")
-            print("3. Eliminar Asignaturas")
+            print("          Submenú de Calificacions             ")
+            print("1. Agregar Calificacions")
+            print("2. Listar Calificaciondos")
+            print("3. Eliminar Calificaciondos")
             print("4. Volver al Menú Principal")
             print("=============================================")
 
             opcion = input("¿Qué necesitas hacer?: ")
 
             if opcion == "1":
-                agregar_asignatura()
+                agregar_calificacion()
             elif opcion == "2":
-                listar_asignaturas()
+                listar_calificaciones()
             elif opcion == "3":
-                eliminar_asignatura()
+                eliminar_calificacion()
             elif opcion == "4":
                 print("Volviendo al menú principal...\n")
                 break
