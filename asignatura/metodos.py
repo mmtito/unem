@@ -5,19 +5,27 @@ lista_asignaturas = []
 
 def agregar_asignatura():
     print("\n--- Agregar Nueva Asignatura ---")
-    nombre_asig = input("Nombre de la asignatura: ")
-    
-    # Validar duración como número (entero)
+
+    nombre_asig = input("Nombre de la asignatura: ").strip()
+
+    # Validar nombre vacío o con números/símbolos
+    if not nombre_asig or not nombre_asig.replace(" ", "").isalpha():
+        print("Error: El nombre de la asignatura no debe estar vacío ni contener números o símbolos.")
+        return
+
     while True:
-        duracion_str = input("Define la Duración en horas (número entero): ")
-        try:
+        duracion_str = input("Define la duración en horas (número entero): ").strip()
+        if not duracion_str.isdigit():
+            print("Por favor ingresa un número entero válido para la duración.")
+        else:
             duracion = int(duracion_str)
-            break
-        except ValueError:
-            print("Por favor ingresa un número válido para la duración.")
-    
+            if duracion <= 0:
+                print("La duración debe ser mayor a cero.")
+            else:
+                break
+
     if not lista_docentes:
-        print("No hay docentes disponibles.")
+        print("No hay docentes disponibles para asignar.")
         return
 
     print("\nDocentes disponibles:")
@@ -32,18 +40,17 @@ def agregar_asignatura():
             lista_asignaturas.append(nueva_asignatura)
             print(f"Asignatura '{nombre_asig}' agregada con éxito.")
         else:
-            print("Selección inválida.")
+            print("Selección inválida. Número fuera de rango.")
     except ValueError:
-        print("Entrada no válida.")
+        print("Entrada no válida. Debes ingresar un número entero.")
 
 def listar_asignaturas():
-    print("\n--- Lista de asignaturas ---")
+    print("\n--- Lista de Asignaturas ---")
     if not lista_asignaturas:
         print("No hay asignaturas registradas.")
     else:
         for i, a in enumerate(lista_asignaturas, 1):
-            # Accede a propiedades (encapsulamiento)
-            print(f"{i}. {a.nombre_asig} | Duración: {a.duracion} | Docente: {a.docente.nombre} {a.docente.apellido}")
+            print(f"{i}. Asignatura: {a.nombre_asig} | Duración: {a.duracion} horas | Docente: {a.docente.nombre} {a.docente.apellido}")
 
 def eliminar_asignatura():
     print("\n--- Eliminar asignatura ---")

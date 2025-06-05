@@ -1,3 +1,4 @@
+from datetime import datetime
 from unemiAdmin import Matricula
 from estudiante.metodos import lista_estudiantes
 from asignatura.metodos import lista_asignaturas
@@ -16,7 +17,7 @@ def agregar_matricula():
 
     print("\nEstudiantes disponibles:")
     for i, est in enumerate(lista_estudiantes):
-        print(f"{i+1}. {est.nombre} {est.apellido} - ID: {est.id_usuario}")
+        print(f"{i+1}. {est.nombre} {est.apellido} - Cedula: {est.id_usuario}")
 
     try:
         indice_est = int(input("Selecciona el número del estudiante a matricular: ")) - 1
@@ -45,7 +46,7 @@ def agregar_matricula():
         print("Selección inválida.")
         return
 
-    dia_matriculacion = input("Fecha de matrícula (AAAA-MM-DD): ")
+    dia_matriculacion = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     nueva_matricula = Matricula(estudiante, asignaturas_seleccionadas, dia_matriculacion)
     lista_matriculas.append(nueva_matricula)
@@ -62,8 +63,8 @@ def listar_matriculas():
         asignaturas = mat.asignaturas
         fecha = mat.fecha
 
-        print(f"\n📘 Matrícula #{i}")
-        print(f"Estudiante: {estudiante.nombre} {estudiante.apellido} (ID: {estudiante.id_usuario})")
+        print(f"\n Matrícula #{i}")
+        print(f"Estudiante: {estudiante.nombre} {estudiante.apellido} (Cedula: {estudiante.id_usuario})")
         print(f"Fecha de Matrícula: {fecha}")
         print("Asignaturas:")
         for asig in asignaturas:

@@ -27,7 +27,7 @@ def generar_horario():
                     hora_fin = hora_inicio + duracion
                     dia = input(f"Ingrese el día para {asignatura.nombre_asig} (ej: lunes, martes...): ").capitalize()
 
-                    if dia.lower() not in ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sabado']:
+                    if dia.lower() not in ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado']:
                         print("Día no válido. Se omite la asignatura.")
                         continue
 
